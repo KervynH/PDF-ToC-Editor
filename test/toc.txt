@@ -1,0 +1,151 @@
+Contents	-11
+Preface for the Instructor	-5
+Preface for the Student	-1
+1 Vector Spaces	1
+	1.A Rn and Cn	2
+		Complex Numbers	2
+		Lists	5
+		F^n	6
+		Digression on Fields	10
+		Exercises 1.A	11
+	1.B Definition of Vector Space	12
+		Exercises 1.B	17
+	1.C Subspaces	18
+		Sums of Subspaces	20
+		Direct Sums	21
+		Exercises 1.C	24
+2 Finite-Dimensional Vector Spaces	27
+	2.A Span and Linear Independence	28
+		Linear Combinations and Span	28
+		Linear Independence	32
+		Exercises 2.A	37
+	2.B Bases	39
+		Exercises 2.B	43
+	2.C Dimension	44
+		Exercises 2.C	48
+3 Linear Maps	50
+	3.A The Vector Space of Linear Maps	51
+		Definition and Examples of Linear Maps	51
+		Algebraic Operations on L.V; W /	54
+		Exercises 3.A	56
+	3.B Null Spaces and Ranges	58
+		Null Space and Injectivity	58
+		Range and Surjectivity	60
+		Fundamental Theorem of Linear Maps	62
+		Exercises 3.B	66
+	3.C Matrices	69
+		Representing a Linear Map by a Matrix	69
+		Addition and Scalar Multiplication of Matrices	71
+		Matrix Multiplication	73
+		Exercises 3.C	77
+	3.D Invertibility and Isomorphic Vector Spaces	79
+		Invertible Linear Maps	79
+		Isomorphic Vector Spaces	81
+		Linear Maps Thought of as Matrix Multiplication	83
+		Operators	85
+		Exercises 3.D	87
+	3.E Products and Quotients of Vector Spaces	90
+		Products of Vector Spaces	90
+		Products and Direct Sums	92
+		Quotients of Vector Spaces	93
+		Exercises 3.E	97
+	3.F Duality	100
+		The Dual Space and the Dual Map	100
+		The Null Space and Range of the Dual of a Linear Map	103
+		The Matrix of the Dual of a Linear Map	108
+		The Rank of a Matrix	110
+		Exercises 3.F	112
+4 Polynomials	116
+	Complex Conjugate and Absolute Value	117
+	Uniqueness of Coefficients for Polynomials	119
+	The Division Algorithm for Polynomials	120
+	Zeros of Polynomials	121
+	Factorization of Polynomials over C	122
+	Factorization of Polynomials over R	125
+	Exercises 4	128
+5 Eigenvalues, Eigenvectors, and Invariant Subspaces	130
+	5.A Invariant Subspaces	131
+		Eigenvalues and Eigenvectors	132
+		Restriction and Quotient Operators	136
+		Exercises 5.A	137
+	5.B Eigenvectors and Upper-Triangular Matrices	142
+		Polynomials Applied to Operators	142
+		Existence of Eigenvalues	144
+		Upper-Triangular Matrices	145
+		Exercises 5.B	152
+	5.C Eigenspaces and Diagonal Matrices	154
+		Exercises 5.C	159
+6 Inner Product Spaces	161
+	6.A Inner Products and Norms	162
+		Inner Products	162
+		Norms	166
+		Exercises 6.A	173
+	6.B Orthonormal Bases	178
+		Linear Functionals on Inner Product Spaces	185
+		Exercises 6.B	187
+	6.C Orthogonal Complements and Minimization Problems	191
+		Orthogonal Complements	191
+		Minimization Problems	196
+		Exercises 6.C	199
+7 Operators on Inner Product Spaces	201
+	7.A Self-Adjoint and Normal Operators	202
+		Adjoints	202
+		Self-Adjoint Operators	207
+		Normal Operators	210
+		Exercises 7.A	212
+	7.B The Spectral Theorem	215
+		The Complex Spectral Theorem	215
+		The Real Spectral Theorem	217
+		Exercises 7.B	221
+	7.C Positive Operators and Isometries	223
+		Positive Operators	223
+		Isometries	226
+		Exercises 7.C	229
+	7.D Polar Decomposition and Singular Value Decomposition	231
+		Polar Decomposition	231
+		Singular Value Decomposition	234
+		Exercises 7.D	236
+8 Operators on Complex Vector Spaces	239
+	8.A Generalized Eigenvectors and Nilpotent Operators	240
+		Null Spaces of Powers of an Operator	240
+		Generalized Eigenvectors	242
+		Nilpotent Operators	246
+		Exercises 8.A	247
+	8.B Decomposition of an Operator	250
+		Description of Operators on Complex Vector Spaces	250
+		Multiplicity of an Eigenvalue	252
+		Block Diagonal Matrices	253
+		Square Roots	256
+		Exercises 8.B	257
+	8.C Characteristic and Minimal Polynomials	259
+		The Cayley–Hamilton Theorem	259
+		The Minimal Polynomial	260
+		Exercises 8.C	265
+	8.D Jordan Form	268
+		Exercises 8.D	272
+9 Operators on Real Vector Spaces	273
+	9.A Complexification	274
+		Complexification of a Vector Space	274
+		Complexification of an Operator	275
+		The Minimal Polynomial of the Complexification	277
+		Eigenvalues of the Complexification	278
+		Characteristic Polynomial of the Complexification	281
+		Exercises 9.A	283
+	9.B Operators on Real Inner Product Spaces	285
+		Normal Operators on Real Inner Product Spaces	285
+		Isometries on Real Inner Product Spaces	290
+		Exercises 9.B	292
+10 Trace and Determinant	293
+	10.A Trace	294
+		Change of Basis	294
+		Trace: A Connection Between Operators and Matrices	297
+		Exercises 10.A	302
+	10.B Determinant	305
+		Determinant of an Operator	305
+		Determinant of a Matrix	307
+		The Sign of the Determinant	318
+		Volume	321
+		Exercises 10.B	328
+Photo Credits	330
+Symbol Index	331
+Index	332
