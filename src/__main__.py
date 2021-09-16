@@ -89,7 +89,7 @@ def shift(pdf_file, page_range, plus=1, minus=0):
     '''
     Shift bookmarks within a given page range, i.e. plus or minus their pagenums simultaneously by a number. This will be quite useful if some pages (usually blank pages) in an e-book PDF is missing.
 
-    - PAGE_RANGE: given by format like '2-40'; or use '20-' to mean from page 20 to the end of the PDF. 
+    :arg PAGE_RANGE: given by format like '2-40'; or use '20-' to mean from page 20 to the end of the PDF. 
     '''
     pdf = fitz.open(pdf_file)
     offset = plus - minus
@@ -120,7 +120,7 @@ def check(file):
     '''
     Check whether bookmark pagenum is increasing.
 
-    - FILE: .pdf file or toc file (.txt)
+    :arg FILE: .pdf file or toc file (.txt)
     '''
     if file.strip().endswith(".txt"):
         toc_txt = TocTxt.read_from_txt(file)
@@ -141,7 +141,7 @@ def check(file):
 
 @main.command()
 @click.argument('pdf_file', type=click.Path(exists=True))
-@click.option('--collapse_level', '-c', help='collapse_level = n means collapsing all bookmarks whose level >= n; and collapse_level = 0 means expanding all bookmarks; by default, collapse_level = 1.')
+@click.option('--collapse_level', '-c', default=1, help='collapse_level = n means collapsing all bookmarks whose level >= n; and collapse_level = 0 means expanding all bookmarks; by default, collapse_level = 1.')
 def collapse(pdf_file, collapse_level):
     '''
     Modify collapse level of the bookmarks.
