@@ -38,7 +38,7 @@ def save_safely(pdf, output_file):
 @click.argument('toc_file', type=click.Path(exists=True))
 @click.option('--offset', '-s', default=0, help='offset == pdf pagenum - actual book pagenum; offset should be non-negative; default=0.')
 @click.option('--output', '-o', help='custom the output filename; by default, the output file will cover the input file.')
-@click.option('--collapse_level', '-c', help='collapse_level = n means collapsing all bookmarks whose level >= n; and collapse_level = 0 means expanding all bookmarks; default=1.')
+@click.option('--collapse_level', '-c', default=1, help='collapse_level = n means collapsing all bookmarks whose level >= n; and collapse_level = 0 means expanding all bookmarks; default=1.')
 def add(pdf_file, toc_file, offset=0, output=None, collapse_level=1):
     '''
     Add bookmarks to a PDF file.
