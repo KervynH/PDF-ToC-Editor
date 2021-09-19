@@ -108,7 +108,7 @@ def shift(pdf_file, page_range, plus=1, minus=0):
     for bookmark in bookmark_list:
         if start <= bookmark.pagenum <= end:
             bookmark.pagenum += offset
-        new_text += bookmark.as_text() + "\n"
+        new_text += bookmark.as_text()
     new_toc_txt = TocTxt(new_text)
     new_toc_txt.write_to_pdf(pdf, collapse_level=1)
     save_safely(pdf, pdf_file)
@@ -150,6 +150,30 @@ def collapse(pdf_file, collapse_level):
     toc_txt = TocTxt.read_from_pdf(pdf)
     toc_txt.write_to_pdf(pdf, collapse_level)
     save_safely(pdf, pdf_file)
+
+
+@main.command()
+@click.argument('pdf_files', nargs=-1)    # 可变参数
+@click.option('--output', '-o', default='merge.pdf', help='Output filename, default will be "merge.pdf".')
+@click.option('--collapse_level', '-c', default=1, help='collapse_level = n means collapsing all bookmarks whose level >= n; and collapse_level = 0 means expanding all bookmarks; by default, collapse_level = 1.')
+def merge(pdf_files, output='merge.pdf', collapse_level=1):
+    '''
+    Merge several PDFs with bookmarks preserved.
+
+    Usage: toc merge [PDF_1] [PDF_2] [PDF_3] ... [PDF_n] -o [Output PDF] 
+    '''
+    merger = fitz.open()
+    toc_txt = TocTxt('')
+    page_count = 0
+    for pdf_file in pdf_files:
+        pdf = fitz.open(pdf_file)
+        toc = TocTxt.read_from_pdf(pdf)
+        merger.insertPDF(pdf, links=True)
+        toc.shift(page_count)
+        toc_txt.extend(toc)
+        page_count += pdf.page_count
+    toc_txt.write_to_pdf(merger, collapse_level)
+    save_safely(merger, output)
 
 
 if __name__ == '__main__':
