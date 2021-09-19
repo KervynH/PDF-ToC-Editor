@@ -8,6 +8,12 @@ class TocTxt:
     def __init__(self, text):
         self.__text = text
 
+    def __str__(self):
+        return self.__text
+
+    def __repr__(self):
+        return self.__text
+
     def get_text(self):
         return self.__text
 
@@ -77,4 +83,21 @@ class TocTxt:
             if bookmark_list[i].pagenum > bookmark_list[i+1].pagenum:
                 wrong_bookmarks.append(bookmark_list[i])
         return wrong_bookmarks
-        
+
+    def shift(self, offset):
+        '''
+        同时增加 ToC 中所有书签的页码
+        '''
+        bookmark_list = self.get_bookmark_list()
+        new_text = ''
+        for bookmark in bookmark_list:
+            bookmark.pagenum += offset
+            new_text += bookmark.as_text()
+        self.__text = new_text
+
+    def extend(self, toc_txt):
+        '''
+        把另一个 toc 的文本接在后面
+        '''
+        assert isinstance(toc_txt, TocTxt)
+        self.__text += toc_txt.get_text()
