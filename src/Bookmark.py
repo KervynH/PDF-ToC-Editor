@@ -64,4 +64,4 @@ class Bookmark:
         '''
         用文本格式表示书签
         '''
-        return (self.depth - 1) * '\t' + self.title + '\t' + str(self.pagenum)
+        return (self.depth - 1) * '\t' + self.title + '\t' + str(self.pagenum) + '\n'
