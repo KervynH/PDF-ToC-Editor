@@ -38,8 +38,8 @@ def save_safely(pdf, output_file):
 @click.argument('toc_file', type=click.Path(exists=True))
 @click.option('--offset', '-s', default=0, help='offset == pdf pagenum - actual book pagenum; offset should be non-negative; default=0.')
 @click.option('--output', '-o', help='custom the output filename; by default, the output file will cover the input file.')
-@click.option('--collapse_level', '-c', default=0, help='collapse_level=n means collapsing all bookmarks whose level >= n; by default, collapse_level=0, which means all bookmarks will be unfolded.')
-def add(pdf_file, toc_file, offset=0, output=None, collapse_level=0):
+@click.option('--collapse', '-c', is_flag=True, help='with this flag, all bookmarks will be automatically collapsed.')
+def add(pdf_file, toc_file, offset=0, output=None, collapse=False):
     '''
     Add bookmarks to a PDF file.
     '''
@@ -47,7 +47,10 @@ def add(pdf_file, toc_file, offset=0, output=None, collapse_level=0):
         output = pdf_file
     pdf = fitz.open(pdf_file)
     toc_txt = TocTxt.read_from_txt(toc_file)
-    toc_txt.write_to_pdf(pdf, collapse_level, offset)
+    if collapse:
+        toc_txt.write_to_pdf(pdf, 1, offset)
+    else:
+        toc_txt.write_to_pdf(pdf, 0, offset)
     save_safely(pdf, output)
 
 
