@@ -38,8 +38,8 @@ def save_safely(pdf, output_file):
 @click.argument('toc_file', type=click.Path(exists=True))
 @click.option('--offset', '-s', default=0, help='offset == pdf pagenum - actual book pagenum; offset should be non-negative; default=0.')
 @click.option('--output', '-o', help='custom the output filename; by default, the output file will cover the input file.')
-@click.option('--collapse_level', '-c', default=1, help='collapse_level = n means collapsing all bookmarks whose level >= n; and collapse_level = 0 means expanding all bookmarks; default=1.')
-def add(pdf_file, toc_file, offset=0, output=None, collapse_level=1):
+@click.option('--collapse_level', '-c', default=0, help='collapse_level=n means collapsing all bookmarks whose level >= n; by default, collapse_level=0, which means all bookmarks will be unfolded.')
+def add(pdf_file, toc_file, offset=0, output=None, collapse_level=0):
     '''
     Add bookmarks to a PDF file.
     '''
@@ -141,7 +141,7 @@ def check(file):
 
 @main.command()
 @click.argument('pdf_file', type=click.Path(exists=True))
-@click.option('--collapse_level', '-c', default=1, help='collapse_level = n means collapsing all bookmarks whose level >= n; and collapse_level = 0 means expanding all bookmarks; by default, collapse_level = 1.')
+@click.option('--collapse_level', '-c', default=1, help='collapse_level = n means collapsing all bookmarks whose level >= n; default will be 1, which means that all bookmarks will be collapse.')
 def collapse(pdf_file, collapse_level):
     '''
     Modify collapse level of the bookmarks.
