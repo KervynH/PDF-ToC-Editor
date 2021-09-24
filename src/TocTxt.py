@@ -58,7 +58,7 @@ class TocTxt:
     #             max_depth = bookmark.depth
     #     return max_depth
 
-    def write_to_pdf(self, pdf, collapse_level, offset=0,):
+    def write_to_pdf(self, pdf, collapse_level=0, offset=0,):
         '''
         把 TocTxt 中的书签信息写入 pdf 文件
         - pdf -> fitz.Document 对象
