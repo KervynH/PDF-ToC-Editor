@@ -179,24 +179,24 @@ def merge(pdf_files, output='merge.pdf', collapse_level=1):
     save_safely(merger, output)
 
 
-@main.command()
-@click.argument('pdf_file', type=click.Path(exists=True))
-@click.option('--output', '-o', default='', help='Output filename; by default, the output file will cover the input file.')
-def flatten(pdf_file, output=''):
-    '''
-    Remove all indents of the bookmarks.
-    '''
-    if output == '':
-        output = pdf_file
-    pdf = fitz.open(pdf_file)
-    toc_txt = TocTxt.read_from_pdf(pdf)
-    bookmark_list = toc_txt.get_bookmark_list()
-    new_txt = ''
-    for bookmark in bookmark_list:
-        bookmark.depth = 1
-        new_txt += bookmark.as_text()
-    TocTxt(new_txt).write_to_pdf(pdf)
-    save_safely(pdf, output)
+# @main.command()
+# @click.argument('pdf_file', type=click.Path(exists=True))
+# @click.option('--output', '-o', default='', help='Output filename; by default, the output file will cover the input file.')
+# def flatten(pdf_file, output=''):
+#     '''
+#     Remove all indents of the bookmarks.
+#     '''
+#     if output == '':
+#         output = pdf_file
+#     pdf = fitz.open(pdf_file)
+#     toc_txt = TocTxt.read_from_pdf(pdf)
+#     bookmark_list = toc_txt.get_bookmark_list()
+#     new_txt = ''
+#     for bookmark in bookmark_list:
+#         bookmark.depth = 1
+#         new_txt += bookmark.as_text()
+#     TocTxt(new_txt).write_to_pdf(pdf)
+#     save_safely(pdf, output)
 
 
 if __name__ == '__main__':
